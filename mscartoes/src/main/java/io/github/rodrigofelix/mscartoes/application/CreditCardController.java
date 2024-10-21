@@ -36,7 +36,7 @@ public class CreditCardController {
 
     }
 
-    @GetMapping(params = "income")
+    @GetMapping("/income")
     public ResponseEntity<List<CreditCard>> getCreditIncomeAt(@RequestParam("income") Long income) {
         List<CreditCard> list = creditCardService.getCardsIncomeLessThanEqual(income);
         return ResponseEntity.ok(list);

@@ -3,10 +3,12 @@ package io.github.rodrigofelix.mscreditvalidation.domain.model;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
+
 @Data
-public class DataClient {
+public class Card {
     private Long id;
     private String name;
-    private Integer age;
-
+    private String cardOwner;
+    private BigDecimal basicLimit;
 }

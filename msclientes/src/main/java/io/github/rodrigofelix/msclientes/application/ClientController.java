@@ -41,8 +41,8 @@ public class ClientController {
     }
 
 
-    @GetMapping("/client/{document}")
-    public ResponseEntity<Client> clientData(@PathVariable("document") String document) {
+    @GetMapping(params = "document")
+    public ResponseEntity<Client> clientData(@RequestParam("document") String document) {
         Client client = clientService.getByDocument(document)
                 .orElseThrow(() -> new RuntimeException("Cliente não encontrado para o documento: " + document));
         return ResponseEntity.ok(client);
